@@ -20,10 +20,11 @@ DetectPhone()
 			echo "NotConnected","$bt"
 			NotConnected=$(($NotConnected+0))
 		fi
+	}
 }
 
 
 echo "START"
-DetectPhone RichardPhoneMAC
+DetectPhone $RichardPhoneMAC
 echo "END"
 
