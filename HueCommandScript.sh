@@ -18,6 +18,10 @@ test="$(curl -H "Accept: application/json" -X GET http://192.168.99.27/api/TupfO
 
 if [ "$test" == "\"all_on\":true" ]; then
 	echo $test
+elif [ "$test" == "\"all_on\":fals" ]; then
+	echo $test
+else
+	echo FAIL $test
 fi
 
 
