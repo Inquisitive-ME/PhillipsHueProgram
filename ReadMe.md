@@ -102,14 +102,22 @@ Use curl_easy_setopt()
 Need to install Bluez libraries to compile
 sudo apt-get install bluez libbluetooth-dev
 
-build in gcc with -lbluetooth i.e.  gcc -lbluetooth -o bluetooth BluetoothTest.c
+build in gcc with -lbluetooth i.e.  gcc BluetoothTest.c -lbluetooth -o bluetooth 
 
 https://git.kernel.org/pub/scm/bluetooth/bluez.git/tree/tools/hcitool.c
 
 trying to compile hcitool.c
 gcc hcitool.c -lbluetooth -o hcitool
 
-I am getting a src/oui.h: No such file or directory, I am wondering if it is because bluetooth is not working on my desktop. I want to try doing the above on raspberry pi which has know working bluetooth
+I am getting a src/oui.h: No such file or directory
+I'm not sure if this is needed for using Bluetooth, but when I remove it I get a bunch of undefined references to functions such as "undefined reference to \`hci_le_clear_resolving_list\' /tmp/ccYTltlI.o: In function `cmd_lerlsz':"
+
+I'm not sure how to get the hcitool.c file to compile so I'm giving up, and was able to get the simplescan.c file to compile from the following webpage:
+https://people.csail.mit.edu/albert/bluez-intro/c404.html#simplescan.c
+
+I'm going to try to start with simplescan.c and hack in using hci tool to use the cc command and the rrsi command that I am using in bash scripts to bing my phone
+
+I'm going to take a break now from the c program and see if I can get a bash program going to get something that works, as I feel I have not been making much progress
 
 Then I need to figure out how to ping bluetooth in C currently using shell script:
 'while true; do
