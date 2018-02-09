@@ -44,7 +44,7 @@
 #include "bluetooth/hci.h"
 #include "bluetooth/hci_lib.h"
 
-#include "src/oui.h"
+//#include "src/oui.h"
 
 #ifndef MIN
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
